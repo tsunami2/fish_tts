@@ -1,5 +1,5 @@
 {
-  "domain": "fish_tts",
+  "domain": "openai_tts",
   "name": "Fish TTS",
   "codeowners": [
     "@tsunami2"
