@@ -66,7 +66,7 @@ class OpenAITTSEntity(TextToSpeechEntity):
         return {
             "identifiers": {(DOMAIN, self._attr_unique_id)},
             "model": f"{self._config.data[CONF_VOICE]}",
-            "manufacturer": "OpenAI"
+            "manufacturer": "Fish Audio / OpenAI-compatible"
         }
 
     @property
