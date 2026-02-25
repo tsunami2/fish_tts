@@ -14,8 +14,9 @@
       }
     },
     "error": {
-      "wrong_api_key": "Invalid API key. Please enter a valid API key.",
-      "already_configured": "This voice and endpoint are already configured."
+      "invalid_config": "Please check API key, voice ID, and endpoint.",
+      "already_configured": "This voice and endpoint are already configured.",
+      "unknown_error": "Unknown error"
     },
     "abort": {
       "already_configured": "This voice and endpoint are already configured."

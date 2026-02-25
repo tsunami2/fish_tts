@@ -4,7 +4,7 @@
 This custom component is based on the `openai_tts` integration and is tuned for using
 [fish.audio](https://fish.audio/) as a Home Assistant Text-to-Speech provider.
 
-## Description
+## What this integration asks for
 
 This integration adds a TTS entity that can be used by Home Assistant Assist, automations,
 and scripts. It sends text to an OpenAI-compatible endpoint and returns WAV audio.
