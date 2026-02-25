@@ -2,20 +2,19 @@
   "config": {
     "step": {
       "user": {
-        "title": "Add text-to-speech engine",
-        "description": "Provide configuration data. See documentation for further info.",
+        "title": "Add Fish Audio text-to-speech engine",
+        "description": "Enter the API key and Voice ID from Fish Audio.",
         "data": {
-          "api_key": "Enter OpenAI API key.",
-          "speed": "Enter speed of the speech",
-          "model": "Select model to be used.",
-          "voice": "Select voice.",
-          "url": "Enter the OpenAI-compatible endpoint. Optionally include a port number."
+          "api_key": "Fish Audio API key",
+          "voice_id": "Fish Audio voice ID",
+          "url": "Fish Audio TTS endpoint URL"
         }
       }
     },
     "error": {
-      "wrong_api_key": "Invalid API key. Please enter a valid API key.",
-      "already_configured": "This voice and endpoint are already configured."
+      "invalid_config": "Please check API key, voice ID, and endpoint.",
+      "already_configured": "This voice and endpoint are already configured.",
+      "unknown_error": "Unknown error"
     },
     "abort": {
       "already_configured": "This voice and endpoint are already configured."

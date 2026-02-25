@@ -1,59 +1,54 @@
-# openai_tts
-# OpenAI TTS Custom Component for Home Assistant
+# fish_tts
+# Fish Audio TTS for Home Assistant
 
-This custom component integrates OpenAI's Text-to-Speech (TTS) service with Home Assistant, allowing users to convert text into spoken audio. The service supports various languages and voices, offering customizable options such as voice model.
+This custom component is a fork of `openai_tts` adapted for
+[Fish Audio](https://fish.audio/) usage in Home Assistant.
 
-## Description
+## What this integration asks for
 
-The OpenAI TTS component for Home Assistant makes it possible to use the OpenAI API to generate spoken audio from text. This can be used in automations, assistants, scripts, or any other component that supports TTS within Home Assistant. *You need an openAI API key.*
+Per Fish Audio quickstart/API usage, setup is focused on:
+
+- **API key**
+- **Voice ID**
+
+The integration UI asks for those values directly.
+
+## Endpoint
+
+Default endpoint:
+
+- `https://api.fish.audio/v1/tts`
+
+You can override it in the config flow if needed.
 
 ## Features
 
-- Text-to-Speech conversion using OpenAI's API
-- Support for multiple languages and voices
-- Customizable speech model (check https://platform.openai.com/docs/guides/text-to-speech for supported voices and models)
-- Integration with Home Assistant's assistant, automations and scripts
+- Fish Audio TTS support for Home Assistant `tts.speak`
+- Config flow fields for API key + Voice ID
+- WAV audio output
 
-## YouTube sample video
+## Example Home Assistant service call
 
-[![OpenAI TTS Demo](https://img.youtube.com/vi/oeeypI_X0qs/0.jpg)](https://www.youtube.com/watch?v=oeeypI_X0qs)
-
-
-
-## Sample Home Assistant service
-
-```
+```yaml
 service: tts.speak
 target:
-  entity_id: tts.openai_nova_engine
+  entity_id: tts.fish_tts_your_voice_id
 data:
   cache: true
   media_player_entity_id: media_player.bedroom_speaker
-  message: My speech has improved now!
+  message: Hello from Fish Audio text to speech.
 ```
 
-## HACS installation ( *preferred!* ) 
+## Installation (HACS)
 
-1. Go to the sidebar HACS menu 
-
-2. Click on the 3-dot overflow menu in the upper right and select the "Custom Repositories" item.
-
-3. Copy/paste https://github.com/sfortis/openai_tts into the "Repository" textbox and select "Integration" for the category entry.
-
-4. Click on "Add" to add the custom repository.
-
-5. You can then click on the "OpenAI TTS Speech Services" repository entry and download it. Restart Home Assistant to apply the component.
-
-6. Add the integration via UI, provide API key and select required model and voice. Multiple instances may be configured.
+1. Open **HACS**.
+2. Add this repository as a custom integration.
+3. Install and restart Home Assistant.
+4. Go to **Settings → Devices & Services** and add **Fish TTS**.
+5. Enter your Fish Audio API key and Voice ID.
 
 ## Manual installation
 
-1. Ensure you have a `custom_components` folder within your Home Assistant configuration directory.
-
-2. Inside the `custom_components` folder, create a new folder named `openai_tts`.
-
-3. Place the repo files inside `openai_tts` folder.
-
-4. Restart Home Assistant
-
-5. Add the integration via UI, provide API key and select required model and voice. Multiple instances may be configured.
+1. Copy `custom_components/openai_tts` into your Home Assistant `custom_components` directory.
+2. Restart Home Assistant.
+3. Add the integration from **Settings → Devices & Services**.
